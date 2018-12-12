@@ -51,4 +51,6 @@ func itemGet() {
 	fmt.Println("Active: ", item.Active)
 	fmt.Println("Observations:  ", item.Observations)
 	fmt.Println("RawJsonData:  ", item.RawJsonData)
+
+	fmt.Println(item)
 }

@@ -11,10 +11,10 @@ import (
 )
 
 func main() {
-	loadData()
+	importDataFromJson()
 }
 
-func loadData() {
+func importDataFromJson() {
 	var profiles []model.Profile
 	if err := json.Unmarshal(getJsonProfiles(), &profiles); err != nil {
 		panic("Could not parse json profiles data")

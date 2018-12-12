@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	itemPartialUpdate()
+	itemUpdatePartialContent()
 }
 
-func itemPartialUpdate() {
+func itemUpdatePartialContent() {
 	svc := common.GetDynamoDbSession()
 
 	input := &dynamodb.UpdateItemInput{

@@ -1,7 +1,7 @@
 package model
 
 type Profile struct {
-	GUI          string `json:"gui"`
+	GUID         string `json:"guid"`
 	Vertical     string `json:"vertical"`
 	Observations string `json:"observations"`
 	Active       bool   `json:"active"`

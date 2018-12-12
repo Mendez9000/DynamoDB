@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	describeTable()
+	tableDescribe()
 }
 
-func describeTable() {
+func tableDescribe() {
 	svc := common.GetDynamoDbSession()
 
 	params := &dynamodb.DescribeTableInput{

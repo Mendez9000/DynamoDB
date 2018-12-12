@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	deleteTable()
+	tableDelete()
 }
 
-func deleteTable() error {
+func tableDelete() error {
 	svc := common.GetDynamoDbSession()
 	_, err := svc.DeleteTable(&dynamodb.DeleteTableInput{
 		TableName: aws.String("Profiles"),

@@ -8,20 +8,20 @@ import (
 )
 
 func main() {
-	createTable()
+	tableCreate()
 }
 
-func createTable() {
+func tableCreate() {
 	svc := common.GetDynamoDbSession()
 
 	params := &dynamodb.CreateTableInput{
 		TableName: aws.String("Profiles"),
 		KeySchema: []*dynamodb.KeySchemaElement{
-			{AttributeName: aws.String("gui"), KeyType: aws.String("HASH")},
+			{AttributeName: aws.String("guid"), KeyType: aws.String("HASH")},
 			{AttributeName: aws.String("vertical"), KeyType: aws.String("RANGE")},
 		},
 		AttributeDefinitions: []*dynamodb.AttributeDefinition{
-			{AttributeName: aws.String("gui"), AttributeType: aws.String("S")},
+			{AttributeName: aws.String("guid"), AttributeType: aws.String("S")},
 			{AttributeName: aws.String("vertical"), AttributeType: aws.String("S")},
 		},
 		ProvisionedThroughput: &dynamodb.ProvisionedThroughput{

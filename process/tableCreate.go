@@ -26,7 +26,28 @@ func tableCreate() {
 		AttributeDefinitions: []*dynamodb.AttributeDefinition{
 			{AttributeName: aws.String("vertical"), AttributeType: aws.String("S")},
 			{AttributeName: aws.String("guid"), AttributeType: aws.String("S")},
+			{AttributeName: aws.String("observations"), AttributeType: aws.String("S")},
 		},
+
+		LocalSecondaryIndexes: []*dynamodb.LocalSecondaryIndex{
+			{
+				IndexName: aws.String("observationsindex"),
+				KeySchema: []*dynamodb.KeySchemaElement{
+					{
+						AttributeName: aws.String("vertical"),
+						KeyType:       aws.String("HASH"),
+					},
+					{
+						AttributeName: aws.String("observations"),
+						KeyType:       aws.String("RANGE"),
+					},
+				},
+				Projection: &dynamodb.Projection{
+					ProjectionType: aws.String("KEYS_ONLY"),
+				},
+			},
+		},
+
 		ProvisionedThroughput: &dynamodb.ProvisionedThroughput{
 			ReadCapacityUnits:  aws.Int64(10),
 			WriteCapacityUnits: aws.Int64(100),

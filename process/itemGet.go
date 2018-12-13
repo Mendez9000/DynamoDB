@@ -1,9 +1,9 @@
 package main
 
 import (
-	"dynamodb_2/common"
-	"dynamodb_2/model"
 	"fmt"
+	"github.com/DynamoDB/common"
+	"github.com/DynamoDB/model"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
@@ -19,11 +19,11 @@ func itemGet() {
 	result, err := svc.GetItem(&dynamodb.GetItemInput{
 		TableName: aws.String("Profiles"),
 		Key: map[string]*dynamodb.AttributeValue{
-			"guid": {
-				S: aws.String("b5e6d907-a953-4a79-be38-0f97b4ca29a4"),
-			},
 			"vertical": {
 				S: aws.String("Pharmacy"),
+			},
+			"guid": {
+				S: aws.String("b5e6d907-a953-4a79-be38-0f97b4ca29a4"),
 			},
 		},
 	})
@@ -46,11 +46,12 @@ func itemGet() {
 	}
 
 	fmt.Println("Found item:")
-	fmt.Println("GUID:  ", item.GUID)
 	fmt.Println("Vertical:", item.Vertical)
+	fmt.Println("GUID:  ", item.GUID)
 	fmt.Println("Active: ", item.Active)
 	fmt.Println("Observations:  ", item.Observations)
 	fmt.Println("RawJsonData:  ", item.RawJsonData)
+	fmt.Println("\n\nresult.Item:  ", result.Item)
 
 	fmt.Println(item)
 }

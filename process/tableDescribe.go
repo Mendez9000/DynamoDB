@@ -1,8 +1,8 @@
 package main
 
 import (
-	"dynamodb_2/common"
 	"fmt"
+	"github.com/DynamoDB/common"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 )

@@ -15,7 +15,7 @@ func main() {
 
 func itemCreate() {
 	profile := model.Profile{
-		Vertical:    "Pharmacy",
+		Vertical:    "pharmacy",
 		GUID:        "b5e6d907-a953-4a79-be38-0f97b4ca29a4",
 		Active:      true,
 		RawJsonData: "{\"date\": \"2013-09-02T00:00:00Z\",\"Name\": \"Alberto\", \"starts\": 9, \"interestCategories\": [\"Receta Verde\"],\"image_url\": \"http://c3.thejournal.ie/media/2018/08/shutterstock_717437125-2-390x285.jpg\"}",

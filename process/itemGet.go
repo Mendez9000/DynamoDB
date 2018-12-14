@@ -20,7 +20,7 @@ func itemGet() {
 		TableName: aws.String("Profiles"),
 		Key: map[string]*dynamodb.AttributeValue{
 			"vertical": {
-				S: aws.String("Pharmacy"),
+				S: aws.String("pharmacy"),
 			},
 			"guid": {
 				S: aws.String("b5e6d907-a953-4a79-be38-0f97b4ca29a4"),

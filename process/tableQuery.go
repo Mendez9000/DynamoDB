@@ -12,7 +12,7 @@ func main() {
 	findAllActives()
 }
 
-//El problema de esto es que recorre toda la tabla
+//Busca por la clave princial
 func findAllPharmacies() {
 	fmt.Println("findAllPharmacies")
 	svc := common.GetDynamoDbSession()
@@ -37,7 +37,7 @@ func findAllPharmacies() {
 	fmt.Println(result)
 }
 
-//El problema de esto es que recorre toda la tabla
+//Busca por una clave secundaria
 func findAllActives() {
 	fmt.Println("\n\nfindAllActives")
 	svc := common.GetDynamoDbSession()
